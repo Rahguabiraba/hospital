@@ -1,0 +1,31 @@
+<?php
+	include("servicios/consultapacientes.php");
+?>
+<h2>Consulta de pacientes</h2>
+<div>
+	<form method='post' action="?consulta" id="consultaform">
+		<div class="label_pacientes">
+			<label>Pacientes a mostrar</label>
+			<select name='numpacientes' form="consultaform" onchange="this.form.submit()">
+				<option <?php if ($filas_a_mostrar == 5) echo 'selected';?> >5</option>
+				<option <?php if ($filas_a_mostrar == 10) echo 'selected';?> >10</option>
+				<option <?php if ($filas_a_mostrar == 20) echo 'selected';?> >20</option>
+				<option <?php if ($filas_a_mostrar == 50) echo 'selected';?> >50</option>
+			</select>
+		</div> <br> <br>
+		<div class="label_busca">
+			<label>Buscar por apellido</label>
+			<input name="buscaapellido" onkeyup="this.form.submit()">
+		</div>
+	</form>
+	
+</div>
+
+<table id="pacientes">
+	<!--Confeccionamos fila que será cabecera de la tabla-->
+	<th><strong>NIF</strong><td><strong>NOMBRE</strong></td><td><strong>APELLIDOS</strong></td><td></td></th>
+	<?= $contenidoTabla ?>
+</table>
+<br /><br />
+<p><?php echo $enlaces ?></p>
+<h4><?php echo $mensajes ?></h4>

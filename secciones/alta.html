@@ -1,0 +1,21 @@
+<?php
+	include("servicios/altapaciente.php");
+?>
+
+<h2>Alta de paciente</h2>
+<form id="formulario" method="post" action="?alta">
+  <label>NIF:</label>
+  <input type="text" id="nif" name="nif" value='<?= $nif ?>'/>
+  <br /><br />
+  <label>Nombre:</label>
+  <input type="text" id="nombre" name="nombre" value='<?= $nombre ?>'/>
+  <br /><br />
+  <label>Apellidos:</label>
+  <input type="text" id="apellidos" name="apellidos" value='<?= $apellidos ?>' />
+  <br /><br />
+  <label>Fecha Ingreso:</label>
+  <input type="date" id="fechaingreso" name="fechaingreso" value='<?= $fechaingreso ?>' />
+  <br /><br />
+  <input type="submit" id="alta" name="alta" value="Alta paciente"/> <br /> <br />
+  <h4><?php echo $mensajes ?></h4>
+</form>

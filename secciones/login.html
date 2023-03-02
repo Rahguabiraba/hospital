@@ -1,0 +1,14 @@
+<!-- Creación del formulario como login -->
+<form action="hospital.php" method="post" class="form-login">
+    <label><strong>Login:</strong></label>
+    <div class="login">
+        <label for="usuario">Usuario</label>
+        <input type="text" name="nif" value='<?= $nif ?>'>
+    </div>
+    <div class="login">
+        <label for="password">Password</label>
+        <input type="password" name="password" value='<?= $password ?>'>
+    </div>
+    <input type="submit" name="login" value="Login" class="button-login">
+    <span><?php echo $mensajes ?></span>
+</form>
